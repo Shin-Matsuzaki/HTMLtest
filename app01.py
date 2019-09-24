@@ -1,6 +1,5 @@
 import random
-
-from flask import Flask
+from flask import Flask, render_template
 import numpy as np
 
 app = Flask(__name__)
@@ -24,9 +23,11 @@ def add(a, b):
 @app.route('/omikuji')
 def omikuji():
     results = ['大吉', '吉', '凶']
-    n = random.randint(0, len(results)-1)
+    idx = random.randint(0, len(results)-1)
+    result = results[idx]
     # result = random.choice(results)
-    return f'{results[n]}'
+    # return f'{result}'
+    return render_template('omikuji.html', result=result)
 
 
 if __name__ == '__main__':
