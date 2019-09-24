@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>hello from index.html</h1>
+
+<form action="/" method="get">
+    UserName: <input type="text" name="username">
+    <input type="submit">
+</form>
+
+{% if username %}
+    <p>こんにちは {{ username }}さん</p>
+{% endif %}
+</body>
+</html>
